@@ -86,6 +86,8 @@ public class UserUtility {
 			display("A. Create New Mad Lib");
 			pause();
 			display("B. View Mad Libs");
+			pause();
+			display("C. Tell Mad Lib");
 			String input = sc.next();
 			if(input.equals("A")||input.equals("a")) {
 				receivedGoodInput = true;
@@ -93,6 +95,9 @@ public class UserUtility {
 			}else if(input.equals("B")||input.equals("b")) {
 				receivedGoodInput = true;
 				MadLibUtility.viewMadLibs();
+			}else if(input.equals("C")||input.equals("c")) {
+				receivedGoodInput = true;
+				MadLibUtility.tellMadLib();
 			}else {
 				pause();
 				display("Invalid input.\n");
