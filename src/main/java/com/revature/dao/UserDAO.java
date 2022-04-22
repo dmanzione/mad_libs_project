@@ -54,7 +54,7 @@ public class UserDAO implements UserInterface {
 	public UserModel getUser(String username) {
 		try {
 
-			String query = "SELECT * FROM User WHERE username = ?";
+			String query = "SELECT * FROM Users WHERE username = ?";
 			PreparedStatement pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, username);
 			ResultSet rs = pstmt.executeQuery();
@@ -77,7 +77,7 @@ public class UserDAO implements UserInterface {
 	public boolean usernameExists(String username) {
 		try {
 
-			String query = "SELECT * FROM User WHERE username = ?";
+			String query = "SELECT * FROM Users WHERE username = ?";
 			PreparedStatement pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, username);
 			ResultSet rs = pstmt.executeQuery();
@@ -96,7 +96,7 @@ public class UserDAO implements UserInterface {
 	@Override
 	public void deleteUser(UserModel user) {
 		try {
-			String query = "DELETE FROM CUSTOMER WHERE username = ?";
+			String query = "DELETE FROM Users WHERE username = ?";
 			PreparedStatement pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, user.username);
 			pstmt.execute();
